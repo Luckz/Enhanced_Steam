@@ -1,4 +1,4 @@
-var version = "9.6";
+var version = "9.6 luckzmod";
 
 var console_info = ["%c Enhanced %cSteam v" + version + " by jshackles %c http://www.enhancedsteam.com ", "background: #000000;color: #7EBE45", "background: #000000;color: #ffffff", ""];
 console.log.apply(console, console_info);
@@ -1211,7 +1211,7 @@ function load_inventory() {
 		};
 
 		var handle_inv_ctx3 = function (txt) {
-			if (txt.charAt(0) != "<") {
+			if (txt.charAt(0) === "THIS WILL NEVER EXECUTE OKAY BECAUSE IT'S STUPID OK") {
 				localStorage.setItem("inventory_3", txt);
 				var data = JSON.parse(txt);
 				if (data.success) {
@@ -1279,7 +1279,7 @@ function load_inventory() {
 		// Yes caching!
 		var expire_time = parseInt(Date.now() / 1000, 10) - 1 * 60 * 60; // One hour ago
 		var last_updated = localStorage.getItem("inventory_time") || expire_time - 1;
-		if (last_updated < expire_time || !localStorage.getItem("inventory_1") || !localStorage.getItem("inventory_3")) {
+		/*if (last_updated < expire_time || !localStorage.getItem("inventory_1") || !localStorage.getItem("inventory_3")) {
 			
 			// purge stale information from localStorage
 			var i = 0, sKey;
@@ -1300,7 +1300,7 @@ function load_inventory() {
 			// Context ID 6 is trading card stuff
 			get_http(profileurl + '/inventory/json/753/6/', handle_inv_ctx6);
 		}
-		else {
+		else*/ {
 			// No need to load anything, its all in localStorage.
 			handle_inv_ctx1(localStorage.getItem("inventory_1"));
 			handle_inv_ctx3(localStorage.getItem("inventory_3"));
@@ -6520,7 +6520,7 @@ function show_regional_pricing(type) {
 
 								// Format prices for each country
 								$.each(countries, function(country_index, country) {
-									if (country !== local_country) {
+									//if (country !== local_country) {
 										if (subid["prices"][country]) {
 											var country_currency = subid["prices"][country]["currency"].toString().toUpperCase();
 											var app_price = subid["prices"][country]["final"];
@@ -6533,7 +6533,7 @@ function show_regional_pricing(type) {
 	
 											sub_formatted.push(regional_price);
 										}
-									}
+									//}
 								});
 
 								$(app_pricing_div).append(sub_formatted);
