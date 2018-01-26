@@ -1,6 +1,6 @@
 {
     "name": "Enhanced Steam",
-    "version": "9.7",
+    "version": "9.8",
     "description": "Enhances the Steam Experience",
     "icons": {
         "128": "img/enhancedsteam.png"
@@ -125,6 +125,7 @@
         "img/alternative_linux_icon.png",
         "img/pinn.png",
         "img/clippy.svg",
+        "img/steam_store.svg",
         "localization/en/strings.json",
         "localization/bg/strings.json",
         "localization/cs/strings.json",
@@ -215,6 +216,15 @@
             ],
             "css": [
                 "css/store.steampowered.com/store_front.css"
+            ]
+        }
+        ,
+        {
+            "matches": [
+                "*://steamcommunity.com/*/wishlist*"
+            ],
+            "css": [
+                "css/steamcommunity.com/steam_store_hover.css"
             ]
         }
     ]
